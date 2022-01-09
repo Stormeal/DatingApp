@@ -25,4 +25,8 @@ export class HeaderComponent implements OnInit {
       }
     );
   }
+
+  logout() {
+    this.loggedIn = false;
+  }
 }
