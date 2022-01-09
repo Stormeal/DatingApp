@@ -4,6 +4,9 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
+// MODULES
+import { FormsModule } from '@angular/forms';
+
 // COMPONENTS
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './navigation/header/header.component';
@@ -15,6 +18,7 @@ import { HeaderComponent } from './navigation/header/header.component';
     AppRoutingModule,
     HttpClientModule,
     BrowserAnimationsModule,
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
