@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AccountService } from 'src/app/_services/account.service';
 
 @Component({
   selector: 'app-header',
@@ -7,12 +8,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
   model: any = {};
+  loggedIn: boolean;
 
-  constructor() {}
+  constructor(private accountService: AccountService) {}
 
   ngOnInit(): void {}
 
   login() {
-    console.log(this.model);
+    this.accountService.login(this.model).subscribe(
+      (res) => {
+        console.log(res);
+        this.loggedIn = true;
+      },
+      (error) => {
+        alert('Unathorized');
+      }
+    );
   }
 }
