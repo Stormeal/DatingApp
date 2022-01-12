@@ -11,9 +11,10 @@ import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 // COMPONENTS
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './navigation/header/header.component';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
-  declarations: [AppComponent, HeaderComponent],
+  declarations: [AppComponent, HeaderComponent, HomeComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
