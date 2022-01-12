@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
+import { User } from 'src/app/_models/user';
 import { AccountService } from 'src/app/_services/account.service';
 
 @Component({
@@ -8,19 +10,15 @@ import { AccountService } from 'src/app/_services/account.service';
 })
 export class HeaderComponent implements OnInit {
   model: any = {};
-  loggedIn: boolean;
 
-  constructor(private accountService: AccountService) {}
+  constructor(public accountService: AccountService) {}
 
-  ngOnInit(): void {
-    this.getCurrentUser();
-  }
+  ngOnInit(): void {}
 
   login() {
     this.accountService.login(this.model).subscribe(
       (res) => {
         console.log(res);
-        this.loggedIn = true;
       },
       (error) => {
         alert('Unathorized');
@@ -30,17 +28,5 @@ export class HeaderComponent implements OnInit {
 
   logout() {
     this.accountService.logout();
-    this.loggedIn = false;
-  }
-
-  getCurrentUser() {
-    this.accountService.currentUser$.subscribe(
-      (user) => {
-        this.loggedIn = !!user;
-      },
-      (error) => {
-        console.log(error);
-      }
-    );
   }
 }
