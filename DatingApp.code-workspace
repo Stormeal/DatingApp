@@ -1,0 +1,15 @@
+{
+	"folders": [
+		{
+			"name": "API",
+			"path": "API"
+		},
+		{
+			"name": "client",
+			"path": "client"
+		}
+	],
+	"settings": {
+		"editor.guides.bracketPairs": "active"
+	}
+}
