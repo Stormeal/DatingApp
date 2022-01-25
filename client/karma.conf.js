@@ -32,6 +32,9 @@ module.exports = function (config) {
         { type: 'text-summary' }
       ]
     },
+    junitReporter: {
+      outputDir: require("path").join(__dirname, "./TestResults"),
+    },
     reporters: ['progress', 'kjhtml'],
     port: 9876,
     colors: true,
