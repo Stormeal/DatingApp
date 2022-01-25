@@ -22,14 +22,9 @@ export class HeaderComponent implements OnInit {
   ngOnInit(): void {}
 
   login() {
-    this.accountService.login(this.model).subscribe(
-      (res) => {
-        this.router.navigateByUrl('/members');
-      },
-      (error) => {
-        this.toastr.error(error.error);
-      }
-    );
+    this.accountService.login(this.model).subscribe((res) => {
+      this.router.navigateByUrl('/members');
+    });
   }
 
   logout() {
