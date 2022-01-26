@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using API.Extensions;
 
 namespace API.Entities
 {
@@ -25,7 +26,7 @@ namespace API.Entities
 
         public int GetAge()
         {
-            return 99;
+            return DateOfBirth.CalculateAge();
         }
 
     }
